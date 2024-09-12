@@ -9,4 +9,4 @@ def fizzbuzz():
         elif n % 3 == 0:
             print("Fizz", end="")
         else:
-            print("{n} ,", end="")
+            print(f"{n} ,", end="")
