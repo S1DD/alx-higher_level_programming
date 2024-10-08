@@ -34,7 +34,7 @@ class Rectangle:
                 """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -52,7 +52,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
@@ -71,7 +71,7 @@ class Rectangle:
                 Perimeter of the rectangle, given by 2 * (height + width)
         """
 
-        if self.__width == 0 or self.__height == 0:
+        if self.__height == 0 or self.__width == 0:
             return 0
 
-        return 2 * (self.__height + self.__width)
+        return 2 * (self.__width + self.__height)
