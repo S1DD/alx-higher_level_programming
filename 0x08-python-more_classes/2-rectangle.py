@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-
-"""
-Defines a Rectangle class
+"""Module 2-rectangle
+Defines a Rectangle class.
 """
 
 
 class Rectangle:
-    """
-    Defines a Rectangle class defined by width and height
-    """
+    """Rectangle class defined by width and height."""
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
 
         Args:
@@ -31,7 +28,7 @@ class Rectangle:
 
         Args:
             value: value of the width, must be a positive integer
-                """
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -60,7 +57,7 @@ class Rectangle:
         """Calculates the area of a Rectangle instance
 
         Returns:
-                Area of the rectangle, given by height * width
+            Area of the the rectangle, given by height * width
         """
         return self.__width * self.__height
 
@@ -68,10 +65,8 @@ class Rectangle:
         """Calculates the perimeter of a Rectangle instance
 
         Returns:
-                Perimeter of the rectangle, given by 2 * (height + width)
+            Perimeter of the rectangle, given by 2 * (height + width)
         """
-
         if self.__height == 0 or self.__width == 0:
             return 0
-
         return 2 * (self.__width + self.__height)
