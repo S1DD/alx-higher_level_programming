@@ -5,7 +5,7 @@ Defines a reactangle class
 """
 
 
-def rectangle(size):
+class Rectangle:
     """
     Defines a empty rectanlge
     """
