@@ -1,25 +1,29 @@
 #!/usr/bin/python3
-"""
+"""Module 6-rectangle
 Defines a Rectangle class.
 """
 
 
 class Rectangle:
-    """
-    Defines a rectangle class defined by width and height
+    """Rectangle class defined by width and height.
+
+    Attributes:
+        number_of_instances: number of Rectangle instances,
+        increments with every instantitation,
+        decrements with every deletion
     """
 
     number_of_instances = 0
 
-    def __init__(self, height, width):
+    def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
 
         Args:
             width: width of the rectangle
             height: height of the rectangle
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def __str__(self):
@@ -27,7 +31,6 @@ class Rectangle:
         of a Rectangle instance, filled with the '#' character."""
         if self.__height == 0 or self.__width == 0:
             return ''
-
         rec_str = ''
         for i in range(self.__height):
             for j in range(self.__width):
@@ -36,12 +39,14 @@ class Rectangle:
         return rec_str[:-1]
 
     def __repr__(self):
-        """Prints the string representation of the rectangle
-        to be able to recreate a new instance using eval()"""
-        return eval(repr(self))
+        """Return a string representation of a Rectangle instance
+        that is able to recreate a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        print("Bye rectangle")
+        """Deletes a Rectangle instance."""
+        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
     @property
@@ -57,9 +62,9 @@ class Rectangle:
             value: value of the width, must be a positive integer
         """
         if not isinstance(value, int):
-            raise TypeError("width must be a integer")
-        elif value < 0:
-            raise ValueError("width must be >=0")
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -76,7 +81,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
@@ -84,7 +89,7 @@ class Rectangle:
         """Calculates the area of a Rectangle instance
 
         Returns:
-                Area of the rectangle, given by height * width
+            Area of the the rectangle, given by height * width
         """
         return self.__width * self.__height
 
@@ -92,9 +97,8 @@ class Rectangle:
         """Calculates the perimeter of a Rectangle instance
 
         Returns:
-                Perimeter of the rectangle, given by 2 * (height + width)
+            Perimeter of the rectangle, given by 2 * (height + width)
         """
-        if self.__width == 0 or self.__height == 0:
+        if self.__height == 0 or self.__width == 0:
             return 0
-
-        return 2 * (self.__height + self.__width)
+        return 2 * (self.__width + self.__height)
