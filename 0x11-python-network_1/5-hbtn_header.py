@@ -3,8 +3,8 @@
 
 Usage: ./5-hbtn_header.py <URL>
 """
-import requests
 import sys
+import requests
 
 
 if __name__ == "__main__":
