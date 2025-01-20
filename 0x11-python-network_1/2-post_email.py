@@ -5,6 +5,8 @@
 """
 import sys
 import urllib.parse
+import urllib.request
+
 
 if __name__ == "__main__":
     url = sys.argv[1]

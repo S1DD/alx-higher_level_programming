@@ -7,10 +7,10 @@ Usage: ./6-post_email.py <URL> <email>
 import sys
 import requests
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     url = sys.argv[1]
-    values = {"email" : sys.argv[2]}
+    values = {"email": sys.argv[2]}
 
     r = requests.post(url, data=values)
     print(r.text)
